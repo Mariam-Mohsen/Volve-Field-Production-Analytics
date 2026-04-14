@@ -26,8 +26,3 @@ The system is built on a custom bridge network containing two primary services:
 ## Production Performance Dashboard
 The analytical core of this project is a dashboard that translates raw PostgreSQL data into field-level insights.
 ![Volve Production Dashboard](/volve_dashboard.png)
-### Key Performance Indicators (KPIs)
-* **Daily Production Volume:** Real-time tracking of Oil (bbl/d), Gas (MSCF/d), and Water (bbl/d) rates.
-* **Wellhead Pressure Trends:** Correlation analysis between choke sizes and wellhead pressure to optimize flow.
-* **Water Cut Analysis:** Monitoring the ratio of water to total fluids to predict reservoir depletion phases.
-* **Cumulative Field Recovery:** A macro-view of the total volume extracted versus estimated ultimate recovery (EUR).
