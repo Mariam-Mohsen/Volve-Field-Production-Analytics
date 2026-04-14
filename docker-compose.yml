@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  jupyter:
+    image: jupyter/datascience-notebook:latest
+    container_name: jupyter_notebook
+    ports:
+      - "8888:8888"
+      - "8050:8050" 
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=mariam  
+    depends_on:
+      - postgres
+    networks:
+      - mynetwork
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_production
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mariam
+      POSTGRES_DB: production_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - production_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  production_data:
